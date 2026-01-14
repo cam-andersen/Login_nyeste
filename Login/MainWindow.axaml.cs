@@ -197,6 +197,11 @@ public partial class MainWindow : Window
         var now = DateTime.Now.ToString("yy-MM-dd HH:mm:ss");
         LogOutput.Text += $"{now} | {message}\n";
     }
+
+    private void OnButtonClick(object? sender, RoutedEventArgs e)
+    {
+        throw new NotImplementedException();
+    }
 }
 
 // ViewModel for ordrer
@@ -254,5 +259,10 @@ public class RelayCommand<T> : ICommand
     {
         if (parameter is T value)
             _execute(value);
+    }
+    
+    private void OnButtonClick(object? sender, RoutedEventArgs e)
+    {
+        Console.WriteLine("Process order button clicked.");
     }
 }
