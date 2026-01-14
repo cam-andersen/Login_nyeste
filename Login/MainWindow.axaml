@@ -119,12 +119,86 @@
 
             <!-- DATABASE -->
             <TabItem Header="🛢 Database">
-                <StackPanel Margin="20">
-                    <Button Content="Recreate default database"
-                            Width="260"
-                            Click="RecreateDatabaseButton_OnClick"/>
-                </StackPanel>
-            </TabItem>
+    <DockPanel Margin="20">
+
+        <!-- CONFIRM BUTTON OUTSIDE GRID (aligned right) -->
+        <Button Content="Confirm order completed"
+                DockPanel.Dock="Bottom"
+                HorizontalAlignment="Right"
+                Margin="0,20,0,0"
+                Width="200"
+                Height="32"
+                Background="Green"
+                Foreground="White"/>
+
+        <!-- MAIN GRID LAYOUT -->
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="150"/>
+                <ColumnDefinition Width="200"/>
+            </Grid.ColumnDefinitions>
+
+            <!-- ORDER HEADER -->
+            <TextBox Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2"
+                     Text="Order"
+                     FontSize="17"
+                     TextAlignment="Center"
+                     Background="#FF120F75"
+                     Foreground="White"
+                     Height="32"
+                     Width="350"
+                     HorizontalAlignment="Center"
+                     Margin="0,10"/>
+
+            <!-- COLUMN HEADERS -->
+            <TextBox Grid.Row="1" Grid.Column="0"
+                     Text="Quantity"
+                     TextAlignment="Center"
+                     FontWeight="Bold"
+                     Foreground="#FF04006B"
+                     Height="32"
+                     Margin="0,5"/>
+            <TextBox Grid.Row="1" Grid.Column="1"
+                     Text="Component"
+                     TextAlignment="Center"
+                     FontWeight="Bold"
+                     Foreground="#FF04006B"
+                     Height="32"
+                     Margin="0,5"/>
+
+            <!-- DATA ROWS -->
+            <TextBlock Grid.Row="2" Grid.Column="0" Text="0" TextAlignment="Center" FontSize="14" Height="24"/>
+            <TextBlock Grid.Row="2" Grid.Column="1" Text="Component A" TextAlignment="Center" FontSize="14" Height="24"/>
+
+            <TextBlock Grid.Row="3" Grid.Column="0" Text="0" TextAlignment="Center" FontSize="14" Height="24"/>
+            <TextBlock Grid.Row="3" Grid.Column="1" Text="Component B" TextAlignment="Center" FontSize="14" Height="24"/>
+
+            <TextBlock Grid.Row="4" Grid.Column="0" Text="0" TextAlignment="Center" FontSize="14" Height="24"/>
+            <TextBlock Grid.Row="4" Grid.Column="1" Text="Component C" TextAlignment="Center" FontSize="14" Height="24"/>
+
+            <!-- PROCESS BUTTON (aligned under Quantity column) -->
+            <Button Content="Process order"
+                    Name="MyButton"
+                    Click="OnButtonClick"
+                    Grid.Row="5" Grid.Column="0"
+                    Width="140"
+                    Height="32"
+                    Background="#1E60FF"
+                    Foreground="White"
+                    Margin="0,20,0,0"
+                    HorizontalAlignment="Left"/>
+        </Grid>
+    </DockPanel>
+</TabItem>
 
             <!-- CREATE ORDER -->
 <!-- CREATE ORDER -->
